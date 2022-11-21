@@ -84,6 +84,16 @@ class Tareas extends Component
 
     }
 
+    public function updated($name, $value)
+    {
+        if($name === 'createTarea'){
+            
+            $this->tarea = null;
+
+            $this->resetPage();
+        }
+    }
+
     public function create(){
 
         $validated = $this->validate();
@@ -138,6 +148,8 @@ class Tareas extends Component
         $this->updateTarea = false;
         $this->tarea       = null;
 
+        $this->resetPage();
+
     }
 
     public function delete()
@@ -154,7 +166,7 @@ class Tareas extends Component
 
         $this->tarea = null;
 
-        $this->resetPage();
+        //$this->resetPage();
     }
 
     public function render()

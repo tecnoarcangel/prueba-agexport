@@ -15,12 +15,14 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($tareas_por_vencer as $tarea )
-                        <tr>
-                            <td class="px-3 py-3.5 text-sm text-gray-500 lg:table-cell">{{ $tarea->descripcion }}</td>
-                            <td class="px-3 py-3.5 text-center text-sm text-gray-500 lg:table-cell">{{ $tarea->fecha_fin->format('d/m/Y') }}</td>
-                        </tr>
-                        @endforeach
+                        @if (isset($tareas_por_vencer))
+                            @foreach ($tareas_por_vencer as $tarea )
+                            <tr>
+                                <td class="px-3 py-3.5 text-sm text-gray-500 lg:table-cell">{{ $tarea->descripcion }}</td>
+                                <td class="px-3 py-3.5 text-center text-sm text-gray-500 lg:table-cell">{{ $tarea->fecha_fin->format('d/m/Y') }}</td>
+                            </tr>
+                            @endforeach
+                        @endif
                     </tbody>
                 </table>
             </div>
