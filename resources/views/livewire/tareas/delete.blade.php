@@ -1,14 +1,14 @@
-<x-jet-confirmation-modal wire:model="deletePagina">
+<x-jet-confirmation-modal wire:model="deleteTarea">
     <x-slot name="title">
-        Eliminar el página {{$name}}
+        Eliminar tarea "{{$this->tarea->titulo ?? ''}}"
     </x-slot>
 
     <x-slot name="content">
-        ¿Estas seguro de eliminar este página? Una vez eliminada, sera revocado de todos los usuarios.
+        ¿Estás seguro de eliminar esta tarea?
     </x-slot>
 
     <x-slot name="footer">
-        <x-jet-secondary-button  wire:click="$toggle('deletePagina')" wire:loading.attr="disabled">
+        <x-jet-secondary-button  wire:click="$toggle('deleteTarea')" wire:loading.attr="disabled">
             Cancelar
         </x-jet-secondary-button>
 
