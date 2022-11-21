@@ -20,7 +20,7 @@ class UserSeeder extends Seeder
         $super_admin = User::create(
             [
                 'name' => 'Super Admin',
-                'email' => 'soporte@grupoperinola.com',
+                'email' => 'soporte@tecnoarcangel.com',
                 'password' => Hash::make('lAbs_124215@3'),
                 'activo' => 1,
             ]
@@ -28,8 +28,8 @@ class UserSeeder extends Seeder
 
         $admin = User::create(
             [
-                'name' => 'Luis Mendez',
-                'email' => 'luis.mendez@grupoperinola.com',
+                'name' => 'Admin',
+                'email' => 'admin@tecnoarcangel.com',
                 'password' => Hash::make('lAbs_124215@3'),
                 'activo' => 1,
             ]
@@ -37,8 +37,8 @@ class UserSeeder extends Seeder
 
         $usuario = User::create(
             [
-                'name' => 'Uriel Arana',
-                'email' => 'uriel@grupoperinola.com',
+                'name' => 'Diego Barrios',
+                'email' => 'diego@tecnoarcangel.com',
                 'password' => Hash::make('lAbs_124215@3'),
                 'activo' => 1,
             ]
@@ -48,8 +48,8 @@ class UserSeeder extends Seeder
         $admin->assignRole('Admin');
         $usuario->assignRole('Usuario');
 
-        User::factory()
-            ->count(15)
-            ->create();
+        //User::factory()
+        //    ->count(15)
+        //    ->create();
     }
 }
