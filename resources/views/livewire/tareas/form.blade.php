@@ -68,6 +68,11 @@
                     <option value="En Proceso">En Proceso</option>
                     <option value="Finalizada">Finalizada</option>
                 </x-select>
+                @error('tarea.estado')
+                <span class="text-xs text-red-600 dark:text-red-400">
+                    {{$message}}
+                </span>
+                @enderror
             </label>
         </div>
 
@@ -81,6 +86,11 @@
                     <option value="2">Media</option>
                     <option value="3">Baja</option>
                 </x-select>
+                @error('tarea.prioridad')
+                <span class="text-xs text-red-600 dark:text-red-400">
+                    {{$message}}
+                </span>
+                @enderror
             </label>
         </div>
     </div>
@@ -89,7 +99,7 @@
     <label class="block mt-4 text-sm">
         <span class="text-gray-700 dark:text-gray-400">Responsable</span>
         <x-jet-input wire:model="tarea.responsable" class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="Responsable" />
-        @error('responsable')
+        @error('tarea.responsable')
         <span class="text-xs text-red-600 dark:text-red-400">
             {{$message}}
         </span>
